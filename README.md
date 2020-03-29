@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/selfdeceited/covid-19-ru-api.svg?branch=master)](https://travis-ci.org/selfdeceited/covid-19-ru-api)
+
 ## Description
 Crude API to get up-to-date statistics about COVID-19 status based on https://github.com/grwlf/COVID-19_plus_Russia
 
