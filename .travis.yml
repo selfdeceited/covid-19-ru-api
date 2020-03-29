@@ -1,13 +1,21 @@
 language: node_js
 node_js:
-  - "12"
-  - "node"
+- '12'
+- stable
+cache:
+  directories:
+  - node_modules
 git:
   depth: 5
 before_install:
-  - npm i -g yarn
+- npm i -g yarn
 install:
-  - yarn
+- yarn
 script:
-  - yarn run test
+- yarn run test
 after_success: yarn run test:cov"
+deploy:
+  provider: heroku
+  api_key:
+    secure: fwl6b5JuX0plisBmy4nyGkTvFUQQcRlEkALMXS9IiX7RaS65sdG/zlLXfHYleeE7WiKz+yyjyHBz37x+fnphGHR5425WRnAnnq1vWJUsIP6+F6lZgzzBbsrh5VUR1pBc8T9oNPdcsNUEfrcaVNX3f9gHjdO311+xKHIvZj9ANOuXpMI9lEhKYOB0bxrhvJcolecuiizVrE+osRioOt2g/Ur63HIx1JgyaLihAUR65Ybyorj2iER+dcW8VU15effAHHboJDC8kzWDSHFcNl0Jj+ZjtgJTEDQugpCmrdPQsVnrFVfSkggz4gWjsuYJFixNH8qJIMhUE7jTW5Fg7hjrmd0k3FMPqql+aqPDN1XB+7NcoLg/U3VzA5yH13v22q3gydJTw0TYGuU89zqAb1L5C9OdPJOxhIfseVZERrQ8IyCK4nLHiv6L2VDuZlZNyM7ZufvFgg+WMLTjZ0X9xS0GaAJw/noOkh3bUfOwTvy4QqsfQg1kK393+NS2BPsOWsE+UHLzj+Q3X4VwTRlLk8K0QaUUItK8JVaYMr7Xphhm19wXp5D36vZhFpSRMeU/PxjNkpMIZ4cCVmoumINwDmuf1sTBp1s7bVKutdYVib0wsjR6TNNJNPqDpoA9ReC/FQJXUKh9vDaXBqSvNj+NWNyDU/SJGYk1foGXUtklUAozWGM=
+  app: covid-19-ru-api
