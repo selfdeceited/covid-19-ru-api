@@ -1,6 +1,9 @@
 ## Description
 Crude API to get up-to-date statistics about COVID-19 status based on https://github.com/grwlf/COVID-19_plus_Russia
 
+## Specfication (draft!)
+ - `/date/2020-03-27` - gets data by given date
+
 ## Installation
 
 ```bash

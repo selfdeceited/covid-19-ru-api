@@ -1,0 +1,6 @@
+[x] implement `/{date}` api
+[ ] implement `/all` api
+[ ] implement `/moscow` api
+[ ] add cache +1d invalidation
+[ ] add invalidation on git file change
+[ ] consider GraphQL wrapper
