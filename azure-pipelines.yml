@@ -20,12 +20,14 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: Test@1
+- task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'test'
+  displayName: 'Run unit tests'
 
-- task: PublishCodeCoverageResults@2
+- task: PublishCodeCoverageResults@1
+  displayName: 'collect coverage'
   inputs: 
     codeCoverageTool: Cobertura
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
