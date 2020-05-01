@@ -16,8 +16,12 @@ export class AppController {
 
   @Get("date/:date")
   getForToday(@Param('date') date): Observable<any> {
-    // todo: if not found today, fallback to latest
-    // 'http://localhost:3000/date/2020-03-27'
-    return this.dataRetrieverService.fetchForDate(new Date(Date.parse(date)));
+    // todo: throw if not found, no message as now
+    return this.dataRetrieverService.fetch(new Date(Date.parse(date)));
+  }
+
+  @Get("moscow/:days?")
+  moscow(@Param('days') days): Observable<any> {
+    return this.dataRetrieverService.fetchMoscowData(+days || 14);
   }
 }
